@@ -1,3 +1,6 @@
+
+
+
 import tkinter as tk
 from tkinter import messagebox
 import random
@@ -14,7 +17,7 @@ class HangmanGame:
         self.word = get_word()
         self.guesses = set()
         self.max_attempts = 6
-        self.ramaining_attempts = self.max_attempts
+        self.remaining_attempts = self.max_attempts
         self.word_display = ['_' for _ in self.word]
         
         self.canvas = tk.Canvas(self.root, width = 300, height = 300)
@@ -65,7 +68,7 @@ class HangmanGame:
         self.attempts_label.config(text=f"Remaining attempts: {self.remaining_attempts}")
             
     def check_game_status(self):
-        if '_' not in self.word-display:
+        if '_' not in self.word_display:
             messagebox.showinfo("Hangman","Congratulations! You Won!")
             self.reset_game()
         elif self.remaining_attempts <=0:
@@ -104,9 +107,9 @@ class HangmanGame:
             
             
 if __name__ =="__main__":
-    outer root = tk.Tk()
-    game = HangmanGame(root)
-    root.mainloop()
+    outer_root = tk.Tk()
+    game = HangmanGame(outer_root)
+    outer_root.mainloop()
                    
                 
                 
